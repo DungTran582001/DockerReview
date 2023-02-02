@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class InfoUser(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, unique=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     balance = models.IntegerField(default=0)
     
     def __str__(self):

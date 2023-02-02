@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="banner">
+                <!-- <img src="{% static 'images/moneylogo.png' %}" alt="money-logo"> -->
+                <h1>Money Management App</h1>
+            </div>
+            <div class="nav-bar">
+                <div class="nav-item dashboard">
+                    <a href="*">dashboard</a>
+                </div>
+                <div class="nav-item rut-tien">
+                    <a href="#">Rut tien</a>
+                </div>
+                <div class="nav-item nap-tien">
+                    <a href="#">Nap tien</a>
+                </div>
+                <div class="nav-item info-user">
+                    <a href="#">Thong tin nguoi dung</a>
+                </div>
+            </div>
+
+            {% block content %}{% endblock content %}
+
+            <div class="footer">
+                <span>Sản phẩm được phát triển bởi: <a href="#">Trần Mạnh Dũng</a></span>
+            </div>
+        </div>
+    </body>
+</html>
