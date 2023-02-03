@@ -3,6 +3,10 @@ from . import views
 
 
 urlpatterns = [
-    path('index', view=views.index, name="index"),
-    path('', view=views.Dashboard, name="dashboard"),
+    path('', view=views.base, name="base"),
+    path('dashboard', view=views.Dashboard, name="Dashboard"),
+    path('rutien', view=views.Ruttien, name="Ruttien"),
+    path('naptien', view=views.Naptien, name="Naptien"),
+    path('thongtin', view=views.InforUser, name="Thongtin"),
+
 ]
