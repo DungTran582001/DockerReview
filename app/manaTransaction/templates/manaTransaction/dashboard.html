@@ -1,6 +1,30 @@
 {% extends "manaTransaction/base.html" %}
 {% load static %}
 {% block title %} My Dashboard{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock css %}
 {% block content %}
-<h1>Dashboard</h1>
+<div class="box1">
+    <div class="user">
+        <img src="{% static 'images/default-avatar.jpg' %}" alt="avatar">
+        <div class="text">
+            <span>TMD</span>
+            <span>So du: 100000</span>
+        </div>
+    </div>
+    <div class="history">
+        <h1>Lich su giao dich</h1>
+        <br>
+        <div class="title">
+            <span>STT</span>
+            <span>Loai giao dich</span>
+            <span>So tien giao dich</span>
+            <span>Ghi chu</span>
+            <span>Thoi gian</span>
+        </div>
+        <div class="data"></div>
+        <hr>
+    </div>
+</div>
 {% endblock content %}

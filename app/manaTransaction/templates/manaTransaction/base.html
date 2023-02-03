@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}{% endblock title %}</title>
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% block css %}{% endblock css %}
     </head>
     <body>
         <div class="container">
@@ -16,7 +17,7 @@
             </div>
             <div class="nav-bar">
                 <div class="nav-item dashboard">
-                    <a href="{% url "Dashboard"%}">dashboard</a>
+                    <a href="{% url "Dashboard"%}">Dashboard</a>
                 </div>
                 <div class="nav-item rut-tien">
                     <a href="{% url "Ruttien"%}">Rut tien</a>
