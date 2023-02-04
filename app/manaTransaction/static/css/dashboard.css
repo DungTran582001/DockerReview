@@ -1,10 +1,9 @@
 .box1 {
     width: 100%;
-    display: flex;
 }
 
 .box1 .user {
-    width: 30%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,14 +16,29 @@
     height: 200px;
     border-radius: 50%;
     box-shadow: 3px 3px 1px #ccc;
-    -webkit-animation:spin 10s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 10s linear infinite;
+    -webkit-animation: spin 10s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 10s linear infinite;
 }
 
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
 
 .box1 .user .text {
     padding: 10px;
@@ -40,7 +54,8 @@
 
 
 .box1 .history {
-    width: 70%;
+    margin-left: 10px;
+    width: 98%;
     background-color: white;
     margin-right: 10px;
     text-align: center;
@@ -50,8 +65,19 @@
     font-size: 30px;
 }
 
-.box1 .history .title{
-    display: flex;
-    justify-content: space-evenly;
+.box1 .history .table {
+    /* font-family: arial, sans-serif; */
+    border-collapse: collapse;
+    width: 100%;
 }
 
+.box1 .history .table td,
+th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+.box1 .history .table tr:nth-child(even) {
+    background-color: #c99e9e;
+  }

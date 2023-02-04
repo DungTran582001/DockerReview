@@ -13,10 +13,10 @@ class InfoUser(models.Model):
 
 
 class HistoryTransaction(models.Model):
-    type_choice = (("rut_tien", "rut tien"), ("nap_tien", "nap tien"))
+    type_choice = (("Rút tiền", "rut tien"), ("Nạp tiền", "nap tien"))
 
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,related_name="userHis")
     type = models.CharField(choices=type_choice, max_length=20)
     amount_money = models.IntegerField(null=False)
     note = models.TextField(null=True)

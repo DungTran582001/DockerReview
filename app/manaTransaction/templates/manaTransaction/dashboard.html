@@ -14,17 +14,29 @@
         </div>
     </div>
     <div class="history">
-        <h1>Lich su giao dich</h1>
+        <h1>Lịch sử giao dịch</h1>
         <br>
-        <div class="title">
-            <span>STT</span>
-            <span>Loai giao dich</span>
-            <span>So tien giao dich</span>
-            <span>Ghi chu</span>
-            <span>Thoi gian</span>
-        </div>
-        <div class="data"></div>
-        <hr>
+        <table class="table">
+            <tr>
+                <th>STT</th>
+                <th>Loại giao dịch</th>
+                <th>Số tiền giao dịch</th>
+                <th>Ghi chú</th>
+                <th>Thời gian</th>
+            </tr>
+            {% for data in datas %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{ data.type }}</td>
+                <td>{{ data.amount_money }}</td>
+                <td>{{ data.note }}</td>
+                <td>{{ data.date }}</td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+
+
     </div>
 </div>
 {% endblock content %}
