@@ -1,0 +1,52 @@
+.rut-tien{
+    position: relative;
+}
+
+.ruttien-con h1{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+}
+.title{
+    font-size: 27px;
+    color: white;
+    width: unset;
+}
+.form-horizontal{
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 20px;
+    background: linear-gradient(#e66465, #9198e5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 50px;
+    width: 700px;
+}
+.col-sm-10{
+    width: 100%;
+}
+
+.form-control{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    outline: none;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.btn{
+    color: white;
+    transition: 0.5s;
+}
+
+
+.btn:hover{
+    color: #e66465;
+    background-color: white;
+}

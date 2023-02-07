@@ -77,7 +77,21 @@ th {
     text-align: center;
     padding: 8px;
 }
+.box1 .history .table th{
+    color: white;
+}
 
 .box1 .history .table tr:nth-child(even) {
     background-color: #c99e9e;
-  }
+}
+
+
+.box1 .history .table tr:nth-child(odd) {
+    background-color: #BEF2F5;
+}
+
+.box1 .history .table tr:nth-child(1){
+    background-color: black;
+    color: white;
+}
+

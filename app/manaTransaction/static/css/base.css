@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
 *{
+    font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -70,21 +72,22 @@ body{
     color: white;
 }
 
-.footer{
+.footer-cus{
     width: 100%;
     justify-content: center;
     position: absolute;
     bottom: 0px;
+    left: 0;
     display: flex;
     background: #3f87a6;
 }
 
-.footer a{
+.footer-cus a{
     color: white;
     text-decoration: none;
 }
 
-.footer span{
+.footer-cus span{
     color: white;
     padding: 5px 0 5px 0;
 }
