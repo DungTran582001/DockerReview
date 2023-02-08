@@ -12,6 +12,10 @@
     color: white;
     width: unset;
 }
+
+.title:nth-child(1){
+    margin-top: 20px;
+}
 .form-horizontal{
     border: none;
     outline: none;

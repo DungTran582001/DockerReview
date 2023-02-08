@@ -18,7 +18,7 @@ class HistoryTransaction(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE,related_name="userHis")
     type = models.CharField(choices=type_choice, max_length=20)
-    amount_money = models.IntegerField(null=False)
+    amount_money = models.FloatField(null=False)
     note = models.TextField(null=True)
     date = models.DateTimeField(auto_now_add=True)
 
