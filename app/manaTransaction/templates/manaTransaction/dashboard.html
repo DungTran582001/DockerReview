@@ -9,8 +9,8 @@
     <div class="user">
         <img src="{% static 'images/default-avatar.jpg' %}" alt="avatar">
         <div class="text">
-            <span>TMD</span>
-            <span>So du: 100000</span>
+            <span>{{ balance_user.user.username }}</span>
+            <span id="show_balance"></span>
         </div>
     </div>
     <div class="history">
@@ -23,9 +23,9 @@
                 <th>Ghi chú</th>
                 <th>Thời gian</th>
             </tr>
-            {% for data in datas %}
+            {% for data in his_users %}
             <tr>
-                <td>{{forloop.counter}}</td>
+                <td>{{ forloop.counter }}</td>
                 <td>{{ data.type }}</td>
                 <td>{{ data.amount_money }}</td>
                 <td>{{ data.note }}</td>
@@ -41,6 +41,16 @@
 {% endblock content %}
 
 {% block js %}
+<script>
+    function num2cur() {
+        var x = parseFloat(`{{balance_user.balance}}`);
+        // console.log(typeof x);
+        x = x.toLocaleString('it-IT', {style : 'currency', currency : 'VND', maximumFractionDigits: 9});
+        console.log(x)
+        document.getElementById("show_balance").innerText = "Số dư: " + x.toString();
+    }
+    num2cur();
+</script>
 <script src="{% static 'js/dashboard.js' %}"></script>
 {% endblock js %}
 

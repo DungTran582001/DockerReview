@@ -7,19 +7,43 @@
 {% block content %}
 <div class="ruttien-con">
     <h1>Rút tiền</h1>
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == "error" %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Lỗi!</strong> Số dư không đủ để thưc hiện tác vụ rút tiền.
+                <!-- <button type="button" class="close" data-dismiss="alert"
+                    aria-label="Close" onclick="Close_Alert()">
+                    <span aria-hidden="true">&times;</span>
+                </button> -->
+            </div>
+            {% elif message.tags == "success"%}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Thành công!</strong>
+                <!-- <button type="button" class="close" data-dismiss="alert"
+                    aria-label="Close" onclick="Close_Alert()">
+                    <span aria-hidden="true">&times;</span>
+                </button> -->
+            </div>
+            {% endif %}
+            
+        {% endfor %}
+    {% endif %}
     <form class="form-horizontal" action="{% url "Ruttien"%}" method="post">
         {% csrf_token %}
         <div class="form-group">
-            <label class="control-label col-sm-2 title" for="email">Số tiền:</label>
+            <label class="control-label col-sm-2 title" for="email">Số tiền:
+                (đơn vị: VNĐ)</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="sotien" name="sotien"
+                <input type="text" class="form-control" id="sotien"
+                    name="sotien"
                     placeholder="Nhập số tiền...">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2 title" for="pwd">Nội dung:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="note" name = "note"
+                <input type="text" class="form-control" id="note" name="note"
                     placeholder="Nhập nội dung...">
             </div>
         </div>
@@ -34,6 +58,6 @@
 {% endblock content %}
 
 {% block js %}
-<script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+<script src="{% static 'js/ruttien.js' %}"></script>
 {% endblock js %}
