@@ -16,7 +16,7 @@
     <div class="history">
         <h1>Lịch sử giao dịch</h1>
         <table class="table table-striped table-class" id="myTable">
-            <tr class="main-title">
+            <tr class="main-title" style="height: 51px;">
                 <th>STT</th>
                 <th>Loại giao dịch</th>
                 <th>Số tiền giao dịch</th>
@@ -24,11 +24,11 @@
                 <th>Thời gian</th>
             </tr>
             {% for data in his_users reversed %}
-            <tr>
+            <tr style="height: 47px;">
                 <td>{{ forloop.counter }}</td>
                 <td>{{ data.type }}</td>
                 <td>{{ data.amount_money }}</td>
-                <td>{{ data.note }}</td>
+                <td>{{ data.note | truncatechars:20 }}</td>
                 <td>{{ data.date }}</td>
             </tr>
             {% endfor %}
