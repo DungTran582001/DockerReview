@@ -4,13 +4,27 @@
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 {% endblock css %}
+
 {% block content %}
 <div class="box1">
     <div class="user">
         <img src="{% static 'images/default-avatar.jpg' %}" alt="avatar">
         <div class="text">
             <span>{{ balance_user.user.username }}</span>
-            <span id="show_balance"></span>
+            <span id="show_balance">
+                <script>
+                    function num2cur(params) {
+                    var x = parseFloat(params);
+                    // console.log(typeof x);
+                    x = x.toLocaleString('it-IT', { style: 'currency', currency: 'VND', maximumFractionDigits: 9 });
+                    // console.log(x)
+                    document.getElementById("show_balance").innerText = "Số dư: " + x.toString();
+                }
+                </script>
+                <script>
+                    num2cur(`{{ balance_user.balance }}`)
+                </script>
+            </span>
         </div>
     </div>
     <div class="history">
@@ -27,7 +41,20 @@
             <tr style="height: 47px;">
                 <td>{{ forloop.counter }}</td>
                 <td>{{ data.type }}</td>
-                <td>{{ data.amount_money }}</td>
+                <td id="show_balance_detail-{{ forloop.counter }}">
+                    <script>
+                        function num2cur(params, detail) {
+                        var x = parseFloat(params);
+                        // console.log(typeof x);
+                        x = x.toLocaleString('it-IT', { style: 'currency', currency: 'VND', maximumFractionDigits: 9 });
+                        // console.log(x)
+                        document.getElementById("show_balance_detail-" + detail).innerText = x.toString();
+                    }
+                    </script>
+                    <script>
+                        num2cur(`{{ data.amount_money }}`, `{{ forloop.counter }}`)
+                    </script>
+                </td>
                 <td>{{ data.note | truncatechars:20 }}</td>
                 <td>{{ data.date }}</td>
             </tr>
@@ -41,16 +68,7 @@
 {% endblock content %}
 
 {% block js %}
-<script>
-    function num2cur() {
-        var x = parseFloat(`{{balance_user.balance}}`);
-        // console.log(typeof x);
-        x = x.toLocaleString('it-IT', {style : 'currency', currency : 'VND', maximumFractionDigits: 9});
-        console.log(x)
-        document.getElementById("show_balance").innerText = "Số dư: " + x.toString();
-    }
-    num2cur();
-</script>
+
 <script src="{% static 'js/dashboard.js' %}"></script>
 {% endblock js %}
 
