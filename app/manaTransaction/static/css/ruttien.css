@@ -23,9 +23,8 @@
 }
 
 .hidden{
-    display: none;
     opacity: 0;
-    transition: visibility 0s 2s, opacity 2s linear;
+    transition: visibility 0s 2s, opacity 0.5s linear;
 }
 
 .title:nth-child(1){
