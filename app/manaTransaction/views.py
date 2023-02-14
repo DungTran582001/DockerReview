@@ -18,6 +18,13 @@ def Dashboard(request):
     }
     return render(request,"manaTransaction/dashboard.html",context=context)
 
+def isfloat(num):
+    try:
+        float(num)
+        return True
+    except ValueError:
+        return False
+
 
 def Ruttien(request):
     user = User.objects.get(username = "test@1")
@@ -26,7 +33,12 @@ def Ruttien(request):
     if request.method == "POST":
         sotien_rut = request.POST.get("sotien")
         note_rut = request.POST.get("note")
-        if float(sotien_rut) > get_balance:
+        
+        if isfloat(sotien_rut) == False:
+            # print("saidinhdangsotienrut")
+            messages.warning(request, "saidinhdangsotienrut")
+            return redirect("Ruttien")
+        elif float(sotien_rut) > get_balance:
             # print(float(sotien_rut))
             messages.error(request,"sodukhongdu")
             return redirect("Ruttien")

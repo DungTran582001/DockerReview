@@ -12,18 +12,14 @@
             {% if message.tags == "error" %}
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Lỗi!</strong> Số dư không đủ để thưc hiện tác vụ rút tiền.
-                <!-- <button type="button" class="close" data-dismiss="alert"
-                    aria-label="Close" onclick="Close_Alert()">
-                    <span aria-hidden="true">&times;</span>
-                </button> -->
+            </div>
+            {% elif  message.tags ==  "warning" %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Lỗi!</strong> Sai định dạng số tiền rút.
             </div>
             {% elif message.tags == "success"%}
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Thành công!</strong>
-                <!-- <button type="button" class="close" data-dismiss="alert"
-                    aria-label="Close" onclick="Close_Alert()">
-                    <span aria-hidden="true">&times;</span>
-                </button> -->
+                <strong>Thành công! </strong>
             </div>
             {% endif %}
             
