@@ -9,8 +9,10 @@
     <h1>Nạp tiền</h1>
     {% if messages %}
         {% for message in messages %}
-            {% if message.tags == "error" %}
-        
+            {% if message.tags == "warning" %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Lỗi!</strong> Sai định dạng số tiền rút.
+            </div>
             {% elif message.tags == "success"%}
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Thành công!</strong>
@@ -23,7 +25,7 @@
             
         {% endfor %}
     {% endif %}
-    <form class="form-horizontal" action="{% url "Ruttien"%}" method="post">
+    <form class="form-horizontal" action="{% url "Naptien"%}" method="post">
         {% csrf_token %}
         <div class="form-group">
             <label class="control-label col-sm-2 title" for="email">Số tiền:

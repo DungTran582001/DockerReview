@@ -56,6 +56,27 @@ def Ruttien(request):
     return render(request, "manaTransaction/ruttien.html")
 
 def Naptien(request):
+    user = User.objects.get(username = "test@1")
+    user_id = user.id
+    get_balance = InfoUser.objects.get(user = user_id).balance
+    if request.method == "POST":
+        sotien_nap = request.POST.get("sotien")
+        note_nap = request.POST.get("note")
+        
+        if isfloat(sotien_nap) == False:
+            # print("saidinhdangsotienrut")
+            messages.warning(request, "saidinhdangsotiennap")
+            return redirect("Naptien")
+        else:
+            # Tao lịch sử giao dịch mới
+            HistoryTransaction.objects.create(user = user, type="Nạp tiền", amount_money = sotien_nap, note = note_nap)
+            # Cộng số dư người dùng sau khi nạp tiền
+            # print(float(sotien_nap))
+            new_balance = get_balance + float(sotien_nap)
+            # print(new_balance)
+            InfoUser.objects.filter(user=user_id).update(balance = new_balance)
+            messages.success(request,"naptienthanhcong")
+            return render(request, "manaTransaction/naptien.html")
     return render(request, "manaTransaction/naptien.html")
 
 def InforUser(request):
