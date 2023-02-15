@@ -133,3 +133,7 @@ input[type="button"]:hover:not(.active) {
     margin: auto;
 }
 
+.footer-cus{
+    bottom: -39px;
+}
+
