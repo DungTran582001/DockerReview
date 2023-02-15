@@ -1,3 +1,7 @@
+.container{
+    height: unset;
+}
+
 .box1 {
     width: 100%;
 }

@@ -1,6 +1,23 @@
 {% extends 'manaTransaction/base.html' %}
 {% load static %}
 {% block title %}Thong tin ca nhan{% endblock title %}
+{% block css %} 
+<link rel="stylesheet" href="{% static 'css/inforuser.css' %}">
+{% endblock css %}
 {% block content %}
-thong tin ca nhan
+<div class="infor-user__con">
+    <h1>Thông tin cá nhân</h1>
+    <div class="box">
+        <div class="left-box">
+            <img src="{% static 'images/default-avatar.jpg' %}" alt="avatar">
+            <button></button>
+        </div>
+        <div class="right-box">
+            <h1>ten</h1>
+            <h1>email</h1>
+            <h1>ngay sinh</h1>
+            <h1>So du</h1>
+        </div>
+    </div>
+</div>
 {% endblock content %}
