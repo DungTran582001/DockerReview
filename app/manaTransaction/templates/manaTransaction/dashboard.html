@@ -65,6 +65,7 @@
 
     </div>
     <script>
+        console.log( typeof `{{ data_storage.1 }}`)
         window.onload = function () {
 	    var chart = new CanvasJS.Chart("chartContainer",
             {
@@ -77,18 +78,18 @@
                         type: "line",
 
                         dataPoints: [
-                            { x: new Date(2012, 00, 1), y: 450 },
-                            { x: new Date(2012, 01, 1), y: 414 },
-                            { x: new Date(2012, 02, 1), y: 520 },
-                            { x: new Date(2012, 03, 1), y: 460 },
-                            { x: new Date(2012, 04, 1), y: 450 },
-                            { x: new Date(2012, 05, 1), y: 500 },
-                            { x: new Date(2012, 06, 1), y: 480 },
-                            { x: new Date(2012, 07, 1), y: 480 },
-                            { x: new Date(2012, 08, 1), y: 410 },
-                            { x: new Date(2012, 09, 1), y: 500 },
-                            { x: new Date(2012, 10, 1), y: 480 },
-                            { x: new Date(2012, 11, 1), y: 510 }
+                            { x: new Date(`{{year_now}}`, 00), y: parseInt(`{{data_storage.0}}`) },
+                            { x: new Date(`{{year_now}}`, 01), y: parseInt(`{{data_storage.1}}`) },
+                            { x: new Date(`{{year_now}}`, 02), y: parseInt(`{{data_storage.2}}`) },
+                            { x: new Date(`{{year_now}}`, 03), y: parseInt(`{{data_storage.3}}`) },
+                            { x: new Date(`{{year_now}}`, 04), y: parseInt(`{{data_storage.4}}`) },
+                            { x: new Date(`{{year_now}}`, 05), y: parseInt(`{{data_storage.5}}`) },
+                            { x: new Date(`{{year_now}}`, 06), y: parseInt(`{{data_storage.6}}`) },
+                            { x: new Date(`{{year_now}}`, 07), y: parseInt(`{{data_storage.7}}`) },
+                            { x: new Date(`{{year_now}}`, 08), y: parseInt(`{{data_storage.8}}`) },
+                            { x: new Date(`{{year_now}}`, 09), y: parseInt(`{{data_storage.9}}`) },
+                            { x: new Date(`{{year_now}}`, 10), y: parseInt(`{{data_storage.10}}`) },
+                            { x: new Date(`{{year_now}}`, 11), y: parseInt(`{{data_storage.11}}`) }
                         ]
                     }
                 ]

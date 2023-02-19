@@ -3,6 +3,7 @@ from .models import InfoUser, HistoryTransaction
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
+import datetime
 # Create your views here.
 def base(request):
     return render(request, "manaTransaction/base.html")
@@ -12,9 +13,20 @@ def Dashboard(request):
     user_id = User.objects.get(username = "test@1").id
     get_balance = InfoUser.objects.get(user = user_id)
     his_users = HistoryTransaction.objects.filter(user = user_id)
+    # print(his_users.count())
+    data_storage = list()
+    get_year_now = datetime.date.today().year
+
+    for i in range(0,12):
+        # check year end
+        get_all_data = HistoryTransaction.objects.filter(user = user_id, date__year = get_year_now, date__month = str(i+1))
+        data_storage.append(get_all_data.count())
+    # print(data_storage)
     context = {
         "balance_user": get_balance,
-        "his_users": his_users
+        "his_users": his_users,
+        "year_now": get_year_now,
+        "data_storage": data_storage
     }
     return render(request,"manaTransaction/dashboard.html",context=context)
 
