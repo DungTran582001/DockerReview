@@ -8,7 +8,7 @@
 {% block content %}
 <div class="box1">
     <div class="user">
-        <img src="{% static 'images/default-avatar.jpg' %}" alt="avatar">
+        <img src="{{ balance_user.pro5_pic.url }}" alt="avatar">
         <div class="text">
             <span>{{ balance_user.user.username }}</span>
             <span id="show_balance">
@@ -65,7 +65,7 @@
 
     </div>
     <script>
-        console.log( typeof `{{ data_storage.1 }}`)
+        // console.log( typeof `{{ data_storage.1 }}`)
         window.onload = function () {
 	    var chart = new CanvasJS.Chart("chartContainer",
             {

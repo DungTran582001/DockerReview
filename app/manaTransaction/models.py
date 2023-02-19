@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class InfoUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     balance = models.FloatField(default=0)
-    
+    pro5_pic = models.ImageField(default="default-avatar.jpg")
     def __str__(self):
         return self.user.username
     
