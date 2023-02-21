@@ -92,4 +92,12 @@ def Naptien(request):
     return render(request, "manaTransaction/naptien.html")
 
 def InforUser(request):
-    return render(request, "manaTransaction/inforuser.html")
+    user_id = User.objects.get(username = "test@1").id
+    infor_user = InfoUser.objects.get(user = user_id)
+    if request.method == "POST":
+        pass
+
+    context = {
+        "infor_user": infor_user
+    }
+    return render(request, "manaTransaction/inforuser.html", context=context)

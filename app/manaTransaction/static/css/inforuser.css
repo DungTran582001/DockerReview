@@ -5,13 +5,15 @@
 }
 
 .box{
+    margin-top: 30px;
     display: flex;
+    height: 350px;
 }
 
 .box .left-box{
     position: relative;
-    background-color: red;
-    width: 50%;
+    width: 40%;
+    height: 100%;
 }
 
 .box .left-box img{
@@ -19,13 +21,25 @@
     left: 0;
     right: 0;
     margin: auto;
-    margin-top: 20px;
+    bottom: 0;
+    top: 0;
     border-radius: 50%;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
 }
 
 .box .right-box{
-    width: 50%;
-    background-color: green;
+
+    display: table;
+    padding: auto;
+    width: 60%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.box .right-box form{
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 50px;
+
 }
