@@ -95,7 +95,23 @@ def InforUser(request):
     user_id = User.objects.get(username = "test@1").id
     infor_user = InfoUser.objects.get(user = user_id)
     if request.method == "POST":
-        pass
+        new_username_value = request.POST.get("username_value")
+        new_balance_value = request.POST.get("balance_value")
+        user = User.objects.get(id=user_id)
+        user.username = new_username_value
+        user.save()
+        change_user_data = InfoUser.objects.get(user= user_id)
+        if len(request.FILES) == 0:
+            print("not ok")
+            change_user_data.balance = new_balance_value
+            change_user_data.save()
+        else:
+            print("ok")
+            change_user_data.balance = new_balance_value
+            change_user_data.pro5_pic = request.FILES['avatar_value']
+            change_user_data.save()
+
+        return redirect("Thongtin")
 
     context = {
         "infor_user": infor_user
