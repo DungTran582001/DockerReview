@@ -15,7 +15,6 @@ phases:
   pre_build:
     commands:
       - echo Prebuild ops
-      - pip3 install -r /home/ubuntu/djangoproject/requirements.txt
   build:
     commands:
       - echo Building the application 
