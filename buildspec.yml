@@ -12,6 +12,15 @@ environment_variables:
     OPBEAT_ENABLED: False
 
 phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - pip3 install --upgrade pip
+      - pip3 install virtualenv
+      - virtualenv venv
+      - source venv/bin/activate
+      - pip3 install -r requirements.txt
   pre_build:
     commands:
       - echo Prebuild ops
