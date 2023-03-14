@@ -13,8 +13,6 @@ environment_variables:
 
 phases:
   install:
-    runtime-versions:
-      python: 3.9
     commands:
       - pip3 install --upgrade pip
       - pip3 install virtualenv
