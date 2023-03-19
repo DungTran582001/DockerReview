@@ -5,8 +5,8 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/djangoproject
-ExecStart=/home/ubuntu/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/djangoproject/app.sock app.wsgi:application
+WorkingDirectory=/home/ubuntu/reviewdocker
+ExecStart=/home/ubuntu/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/reviewdocker/app/app.sock app.wsgi:application
 
        
 [Install]

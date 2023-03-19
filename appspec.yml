@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files: 
   - source: /
-    destination: /home/ubuntu/djangoproject
+    destination: /home/ubuntu/reviewdocker
 permissions:
-  - object: /home/ubuntu/djangoproject
+  - object: /home/ubuntu/reviewdocker
     owner: ubuntu
     group: ubuntu
 hooks:
