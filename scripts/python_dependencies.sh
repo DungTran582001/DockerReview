@@ -2,4 +2,5 @@
 
 virtualenv /home/ubuntu/env
 source /home/ubuntu/env/bin/activate
-pip3 install -r /home/ubuntu/reviewdocker/requirements.txt
+cd reviewdocker
+pip3 install -r /requirements.txt
