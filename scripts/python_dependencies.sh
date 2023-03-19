@@ -2,4 +2,4 @@
 
 virtualenv /home/ubuntu/env
 source /home/ubuntu/env/bin/activate
-pip install -r /home/ubuntu/djangoproject/requirements.txt
+pip3 install -r /home/ubuntu/reviewdocker/requirements.txt
