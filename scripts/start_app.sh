@@ -1,6 +1,6 @@
 #!/usr/bin/bash 
 
-sed -i 's/\[]/\["3.231.208.237"]/' /home/ubuntu/reviewdocker/app/settings.py
+sed -i 's/\[]/\["34.239.126.99"]/' /home/ubuntu/reviewdocker/app/settings.py
 
 python manage.py migrate 
 python manage.py makemigrations     
